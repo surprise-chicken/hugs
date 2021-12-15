@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>HUGS</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Panel (Banner) -->
+			<section class="panel banner right">
+				<div class="content color0 span-3-75">
+					<h1 class="major">Hug countdown 🤗</h1>
+					<h3 id="countdown"></h3>
+					<p>Counting down the seconds till we can see each other again...</p>
+					<ul class="actions">
+						<li><a href="#first" class="button primary color1 circle icon solid fa-angle-right">Next</a>
+						</li>
+					</ul>
+				</div>
+				<div class="image filtered span-1-75" data-position="25% 25%">
+					<img src="images/pic01.jpg" alt="" />
+				</div>
+			</section>
+
+			<!-- Panel (Spotlight) -->
+			<section class="panel spotlight medium right" id="first">
+				<div class="content span-7">
+					<h3 class="major">I know LDR is hard but we'll make it work!</h3>
+					<p>
+						Thus, here is a little LDR care package while we're 9,929 miles apart:
+					<ul>
+						<li>Daily Zoom calls: <a>https://brandeis.zoom.us/j/9286389647</a></li>
+						<li>Online Monopoly Deal: <a>https://playmdeal.com/home</a></li>
+						<li>Dog pics: <a>https://www.bestpuppy.com/funny-dog-pictures</a></li>
+						<li>Food YT: <a>https://www.youtube.com/c/BestEverFoodReviewShow</a></li>
+					</ul>
+					</p>
+				</div>
+				<div class="image filtered tinted" data-position="top left">
+					<img src="images/pic02.jpg" alt="" />
+				</div>
+			</section>
+
+			<!-- Panel (Spotlight) -->
+			<section class="panel spotlight large left">
+				<div class="content span-5">
+					<h3 class="major">I love you!</h3>
+					<p>Thanks for being the sweetest girlfriend any man can ask for. I'm so grateful to have you in my life. Winter break is gonna suck not having you here; I made this website to literally count down the seconds till I see you again. Stay healthy in JKT, and enjoy being home! My one single request is that you DON'T send me pics of food, awas ya. I love you!</p>
+				</div>
+				<div class="image filtered tinted" data-position="middle right">
+					<img src="images/pic03.jpg" alt="" />
+				</div>
+			</section>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script>
+		// Set the date we're counting down to
+		var countDownDate = new Date("Jan 11, 2022 00:00:00").getTime();
+
+		// Update the count down every 1 second
+		var x = setInterval(function () {
+
+			// Get today's date and time
+			var now = new Date().getTime();
+
+			// Find the distance between now and the count down date
+			var distance = countDownDate - now;
+
+			// Time calculations for days, hours, minutes and seconds
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			// Output the result in an element with id="countdown"
+			document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+				+ minutes + "m " + seconds + "s ";
+
+			// If the count down is over, write some text 
+			if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("countdown").innerHTML = "EXPIRED";
+			}
+		}, 1000);
+	</script>
+
+</body>
+
+</html>
